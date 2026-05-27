@@ -1,0 +1,234 @@
+[
+    {
+        "question": "Was ist ein Service Level Agreement (SLA)?",
+        "answer": "Ein SLA ist eine Vereinbarung zwischen Dienstleister und Kunden, die Serviceeigenschaften wie Verfügbarkeit und Reaktionszeiten verbindlich festlegt. Es dient dazu, die Servicequalität messbar zu machen und Erwartungen abzugleichen."
+    },
+    {
+        "question": "Nenne die 5 Phasen des ITIL V3 Service-Lifecycles.",
+        "answer": "Die Phasen sind Service Strategy, Service Design, Service Transition, Service Operation und Continual Service Improvement. Jede Phase deckt spezifische Managementbereiche wie Portfolio, Design oder Support ab."
+    },
+    {
+        "question": "Was versteht man unter dem kontinuierlichen Verbesserungsprozess (KVP) in ITIL V3?",
+        "answer": "Der KVP (oder CSI) ist ein dauerhaftes Bestreben, die Qualität von IT-Services durch ständige Analysen und Optimierungen zu steigern. Er ist ein zentraler Standard zur Qualitätssicherung."
+    },
+    {
+        "question": "Was sind föderierte Serviceelemente?",
+        "answer": "Dies sind verschiedene Ressourcen und Dokumente eines Services, wie Assets, Budgets, das Leistungsportfolio und der Servicekatalog. Auch Kontakte, Workflows und Collaboration-Tools gehören dazu."
+    },
+    {
+        "question": "Definiere 'Orchestrierung' im IT-Service-Kontext.",
+        "answer": "Orchestrierung bezeichnet die automatisierte Konfiguration, Verwaltung und Koordinierung von Computersystemen, Anwendungen und Services. Sie dient der Effizienzsteigerung in komplexen IT-Umgebungen."
+    },
+    {
+        "question": "Warum sind Urheber- und Markenrechte für IT-Unternehmen wichtig?",
+        "answer": "Sie stellen ein wesentliches Wirtschaftsgut dar, das den Wert und die Innovationen des Unternehmens schützt. Rechtliche Vorgaben müssen im Servicebereich zwingend beachtet und unterschieden werden."
+    },
+    {
+        "question": "Welches Ziel verfolgt die Überlassung von Software nach dem Urhebergesetz?",
+        "answer": "Das Ziel ist es, gemeinsam nutzbare Werte zu schaffen und Software einer großen Nutzergemeinde zur Vervielfältigung und Veränderung zuzuführen. Dies geschieht innerhalb des Rahmens des bestehenden Urheberrechts."
+    },
+    {
+        "question": "Was ist die Hauptaufgabe des Service Designs laut ITIL?",
+        "answer": "Die Koordinierung und Entwicklung von Services. Dazu gehören Teilbereiche wie Capacity-, Availability- und Security-Management."
+    },
+    {
+        "question": "Welche Prozesse gehören zur Phase 'Service Operation'?",
+        "answer": "Dazu zählen der Service Desk, das Incident Management, Event Management, Request Fulfillment und Access Management. Diese Prozesse sichern die Bereitstellung und Erbringung der Services."
+    },
+    {
+        "question": "Was ist das Ziel der 'Service Transition'?",
+        "answer": "Der Servicetransfer sowie die Überführung oder Neuausrichtung von Services. Wichtige Bestandteile sind Change Management, Knowledge Management und Service Validation."
+    },
+    {
+        "question": "Warum fordern moderne IT-Systeme verstärkt Automation?",
+        "answer": "Um Zusammenarbeit und Transparenz in komplexen Systemen zu gewährleisten und einfache, praktikable Ansätze zu unterstützen. Dies beinhaltet oft auch KI-Unterstützung und agilere Methoden."
+    },
+    {
+        "question": "Nenne Beispiele für digitale Analyse-Übersichten im Servicemanagement.",
+        "answer": "Dazu gehören To-do-Listen, Kanban-Boards, Gantt-Charts, Netzpläne und Protokolle. Diese helfen bei der Orchestrierung und Projektverwaltung."
+    },
+    {
+        "question": "Welche Schritte umfasst der Prozess der Bearbeitung von Serviceanfragen?",
+        "answer": "Der Prozess beinhaltet die Identifizierung, Erfassung, Kategorisierung, Priorisierung und erste Diagnose eines Vorfalls. Danach folgen Eskalation, Untersuchung oder die direkte Lösung und Wiederherstellung."
+    },
+    {
+        "question": "Wofür steht das Akronym RACI?",
+        "answer": "Es steht für Responsible (Durchführungsverantwortung), Accountable (Ergebnisverantwortung), Consulted (Beratung) und Informed (Information). Es dient der Analyse und Darstellung von Verantwortlichkeiten im Team."
+    },
+    {
+        "question": "Welche wichtige Regel gilt für die Zuweisung der Rolle 'Accountable' (A) in einer RACI-Matrix?",
+        "answer": "In jeder Zeile (Aktivität) sollte genau eine Person die Ergebnisverantwortung (A) tragen. Gleichzeitige Zuweisungen von 'A' und 'R' für dieselbe Person sollten vermieden werden."
+    },
+    {
+        "question": "Was unterscheidet eine funktionale von einer hierarchischen Eskalation?",
+        "answer": "Eine funktionale Eskalation erfolgt an Spezialisten mit tieferem Fachwissen (z. B. 2nd-Level-Support), während eine hierarchische Eskalation die Einbeziehung des Managements zur Entscheidungsfindung bedeutet."
+    },
+    {
+        "question": "Was ist die Aufgabe eines Case Owners?",
+        "answer": "Der Case Owner (oder Fallverantwortliche) steuert den Ticketverlauf, überwacht Fristen und veranlasst bei Bedarf Eskalationen. Er ist für die kundenzufriedene Fallbearbeitung verantwortlich."
+    },
+    {
+        "question": "Was ist das Ziel des Incident Managements?",
+        "answer": "Die schnellstmögliche Wiederherstellung des normalen Servicebetriebs nach einer Störung. Falls keine sofortige Lösung vorliegt, wird das Problem an das Problem Management übergeben."
+    },
+    {
+        "question": "Wann wird ein Workaround im Problem Management eingesetzt?",
+        "answer": "Ein Workaround wird genutzt, wenn die endgültige Ursache noch nicht behoben werden kann, aber der Betrieb vorübergehend ermöglicht werden soll. Er wird oft in einer Known Error Database (KEDB) dokumentiert."
+    },
+    {
+        "question": "Was sind Key-Performance-Indikatoren (KPI) im IT-Service?",
+        "answer": "KPIs sind Kennzahlen zur Messung der Servicequalität, wie die Dauer der Fehlerbehebung oder das Verhältnis von gelösten zu ungelösten Tickets. Sie werden oft automatisch durch Monitoring-Systeme ermittelt."
+    },
+    {
+        "question": "Wie berechnet sich die Resolution Time (Lösungszeit)?",
+        "answer": "Sie setzt sich aus der Response Time (Reaktionszeit), der Repair Time (Reparaturzeit) und der Recovery Time (Wiederherstellungszeit) zusammen."
+    },
+    {
+        "question": "Nenne drei Erfolgsfaktoren für eine kundenzufriedene Fallbearbeitung.",
+        "answer": "Beachtung der SLAs, rechtzeitiges Erkennen von Eskalationsbedarf und die Erstellung von Musterlösungen für die Datenbank. Auch die Analyse von KPI-Größen trägt zur Verbesserung bei."
+    },
+    {
+        "question": "Was ist die Aufgabe des Event Managements?",
+        "answer": "Die Erkennung, Protokollierung und Filterung von Ereignissen (Events) im System. Es entscheidet, ob ein Event als Incident, Problem oder Change weiterbearbeitet werden muss."
+    },
+    {
+        "question": "Welche Informationen sollten in einem Ticket dokumentiert werden?",
+        "answer": "Alle verfügbaren Informationen zum Servicefall sowie der gesamte Verlauf der Bearbeitung. Dies geschieht meist über standardisierte Service-Ticket-Formulare."
+    },
+    {
+        "question": "Erkläre das Eisbergmodell in der Problemanalyse.",
+        "answer": "Nur etwa 10 % der Ursachen einer Störung sind oberflächlich sichtbar, während 90 % der tieferliegenden Gründe 'unter Wasser' verborgen sind. Probleme müssen daher ganzheitlich und unter Einbeziehung des Umfelds analysiert werden."
+    },
+    {
+        "question": "Was besagt das Pareto-Prinzip für das Incident Management?",
+        "answer": "Es besagt, dass ca. 20 % der beschriebenen Vorfälle oft Lösungsansätze für 80 % aller auftretenden Fälle liefern. Lösungsdatenbanken sollten nach diesem Prinzip organisiert werden."
+    },
+    {
+        "question": "Wofür steht der DMAIC-Zyklus?",
+        "answer": "Für die Phasen Define (Definieren), Measure (Messen), Analyse (Untersuchen), Improve (Verbessern) und Control (Steuern). Er ist die Kernmethode des Six-Sigma-Ansatzes zur Qualitätsverbesserung."
+    },
+    {
+        "question": "Was passiert in der 'Define'-Phase des DMAIC-Zyklus?",
+        "answer": "Das Problem und sein Umfang werden definiert, oft unter Nutzung von Kundenrückmeldungen, RACI-Matrizen oder KPI-Analysen. Die Leitfrage lautet: 'Was ist das Problem?'."
+    },
+    {
+        "question": "Erkläre die 'Measure'-Phase im DMAIC-Zyklus.",
+        "answer": "Es wird die Ist-Situation ermittelt, Messwerte werden erhoben und SLA-Vereinbarungen geprüft. Ziel ist es festzustellen, wie groß das Problem tatsächlich ist."
+    },
+    {
+        "question": "Was ist das Ziel der 'Analyse'-Phase im DMAIC-Zyklus?",
+        "answer": "Die Identifikation der Hauptursachen eines Problems. Methoden hierfür sind das Ursache-Wirkungsdiagramm, Brainstorming oder die '5 Warum'-Technik."
+    },
+    {
+        "question": "Was wird in der 'Improve'-Phase des DMAIC-Zyklus getan?",
+        "answer": "Es werden Lösungen entwickelt und in Simulationen oder Testläufen erprobt. Konzepte wie Kaizen oder Kanban kommen hier oft zum Einsatz."
+    },
+    {
+        "question": "Wie funktioniert die 'Control'-Phase im DMAIC-Zyklus?",
+        "answer": "Die erzielten Verbesserungen werden durch Monitoring und Management-Systeme abgesichert. Ziel ist die langfristige Qualitätssteigerung durch einen kontinuierlichen Verbesserungsprozess."
+    },
+    {
+        "question": "Wie ist ein Ursache-Wirkungs-Diagramm (Ishikawa) aufgebaut?",
+        "answer": "Es visualisiert eine Störgröße (den 'Fischkopf') und ordnet mögliche Haupteinflüsse als 'Fischgräten' an. Diese werden in weitere Nebenursachen unterteilt, um die Problemquelle einzugrenzen."
+    },
+    {
+        "question": "Was ist das Ziel der '5-Warum-Technik'?",
+        "answer": "Durch fünfmaliges (oder mehrmaliges) Hinterfragen der Ursache soll man zur eigentlichen Grundursache eines Problems gelangen. Beispiel: Drucker druckt nicht -> Patronen leer -> XS statt XXL -> falscher Lieferant -> keine Bedarfsplanung."
+    },
+    {
+        "question": "Wie funktioniert die Problemanalyse nach Kepner-Tregoe?",
+        "answer": "Man vergleicht systematisch die Fakten ('Was ist gestört?') mit der Abgrenzung ('Was ist nicht gestört?'), um Ursachen einzukreisen. Diese Methode gilt als 'Best Practice' zur Identifikation unbekannter Ursachen."
+    },
+    {
+        "question": "Welche Vorteile bieten moderne Helpdesk-Systeme?",
+        "answer": "Sie ermöglichen schnellen Überblick über Kundenressourcen, Fernwartung (Remote-Support) und zentrales Monitoring aller Vorgänge unter einer Ticketnummer. Zudem fördern sie die Einhaltung von Revisionskontrollen."
+    },
+    {
+        "question": "Nenne drei fachliche Anforderungen an IT-Support-Mitarbeiter.",
+        "answer": "Kenntnisse in Betriebssystemen (Windows, Linux, MacOS), Support bei IT-Störungen (Telefon, Remote) und Einhaltung definierter SLAs. Auch Patch-Management und Server-Grundtätigkeiten gehören dazu."
+    },
+    {
+        "question": "Was ist eine Knowledge Base?",
+        "answer": "Eine Lösungsdatenbank, die Sammlungen von FAQs und Mustertickets enthält, um Störungen systematischer und schneller zu beheben. Sie muss von dedizierten Mitarbeitern aktiv gepflegt werden."
+    },
+    {
+        "question": "Welche Faktoren beeinflussen die qualifizierte Aussage zur Reaktionszeit?",
+        "answer": "Rechtliche Faktoren (SLA, Wartungsvertrag), sachliche Faktoren (Priorität, Ersatzteilverfügbarkeit) und organisatorische Ressourcen (Wartungszyklen, Personalverfügbarkeit). Auch technische Möglichkeiten wie Fernzugriff spielen eine Rolle."
+    },
+    {
+        "question": "Nenne die vier Seiten einer Nachricht nach dem Modell von Schulz von Thun.",
+        "answer": "Sachebene (Worüber ich informiere), Selbstkundgabe (Was ich von mir offenbare), Beziehungsebene (Was ich von dir halte) und Appell (Wozu ich dich veranlassen möchte)."
+    },
+    {
+        "question": "Wie sollte man laut Deeskalationsstrategie mit einem 'streitsüchtigen' Diskussionstyp umgehen?",
+        "answer": "Man sollte sachlich und ruhig bleiben und die Person zu einem konstruktiven Beitrag ermuntern."
+    },
+    {
+        "question": "Was ist das Merkmal des Diskussionstyps 'Dampfplauderer' und wie reagiert man?",
+        "answer": "Er redet viel ohne Punkt und Komma"
+    },
+    {
+        "question": "Wie geht man mit einem 'wortkargen' Gesprächspartner um?",
+        "answer": "Man sollte ihn direkt auffordern, seine Meinung oder Erfahrungen mitzuteilen, um ihn in das Gespräch einzubeziehen."
+    },
+    {
+        "question": "Erkläre das Eisenhower-Prinzip zur Aufgabenpriorisierung.",
+        "answer": "Aufgaben werden nach Dringlichkeit und Wichtigkeit in vier Quadranten eingeteilt. Wichtig und Dringend wird sofort erledigt"
+    },
+    {
+        "question": "Was macht man nach dem Eisenhower-Prinzip mit Aufgaben, die dringlich, aber weniger wichtig sind?",
+        "answer": "Diese Aufgaben sollten an Mitarbeiter delegiert werden."
+    },
+    {
+        "question": "Wie werden Aufgaben behandelt, die wichtig, aber nicht dringlich sind?",
+        "answer": "Diese müssen terminiert und in der Zeitplanung fest berücksichtigt werden."
+    },
+    {
+        "question": "Was bildet die Basis für ein funktionierendes Zeitmanagement?",
+        "answer": "Das Setzen von Prioritäten und die Einteilung in wichtige und weniger wichtige Aufgaben. Methoden wie die ABC-Analyse unterstützen diesen Prozess."
+    },
+    {
+        "question": "Was beschreibt das Sieben-Phasen-Modell von Streich?",
+        "answer": "Es bildet die emotionale Entwicklung von Mitarbeitern während Veränderungsprozessen ab. Die Phasen reichen vom Schock und Ablehnung bis hin zu Lernen, Erkenntnis und Integration."
+    },
+    {
+        "question": "Nenne drei Prinzipien der persönlichen Arbeitsorganisation.",
+        "answer": "Erstellung von To-do-Listen, Zerlegung großer Aufgaben in Teilziele und das Aufräumen des Schreibtischs am Abend. Auch das umgehende Verwerfen überflüssiger Informationen gehört dazu."
+    },
+    {
+        "question": "Welche 'Zauberworte' fördern eine kundengerechte Kommunikation?",
+        "answer": "Worte wie 'bitte', 'danke', 'gerne', 'selbstverständlich' oder 'hervorragend'. Eine positive Wortwahl steigert die Kundenzufriedenheit erheblich."
+    },
+    {
+        "question": "Wie kann man die Kundenberatung durch Medienkompetenz verbessern?",
+        "answer": "Durch den Einsatz von Onlinetools für E-Learning, Kollaborations-Software und Medien zur ansprechenden Präsentation des Produktportfolios."
+    },
+    {
+        "question": "Nenne die drei klassischen IT-Schutzziele.",
+        "answer": "Verfügbarkeit von Ressourcen, Vertraulichkeit personenbezogener Daten und Integrität (Korrektheit) von Informationen."
+    },
+    {
+        "question": "Welche Instandhaltungsarten werden im IT-Bereich unterschieden?",
+        "answer": "Wartung, Inspektion, Instandsetzung und Verbesserung. Maßnahmen können präventiv oder prädiktiv (vorhersagend) sein."
+    },
+    {
+        "question": "Was kennzeichnet prädiktive Maßnahmen zur Störungsvermeidung?",
+        "answer": "Der Einsatz von High-Performance-Monitoring, Real Time Analytics und künstlicher Intelligenz, um Ausfälle proaktiv zu verhindern."
+    },
+    {
+        "question": "Welchen Einfluss haben Schulungsmaßnahmen auf die Servicequalität?",
+        "answer": "Sie verbessern die Anforderungsanalyse, vertiefen technisches Know-how und bereiten Mitarbeiter optimal auf Kundengespräche vor. Schulungen helfen zudem, SLAs besser einzuhalten."
+    },
+    {
+        "question": "Welche rechtlichen Compliance-Anforderungen sind für IT-Mitarbeiter relevant?",
+        "answer": "Datenschutz (DSGVO), Urheberrecht, Informationssicherheit und Medienethik. Diese müssen im Rahmen der Medienkompetenz geschult werden."
+    },
+    {
+        "question": "Nenne Beispiele für typische Störungsfälle an IT-Arbeitsplätzen.",
+        "answer": "Temporäre Druckerausfälle, flackernde Bildschirme, lange PC-Wartezeiten oder fehlender Netzwerkzugriff bei Laptops. Oft sind veraltete Treiber oder ungenügender RAM die Ursache."
+    },
+    {
+        "question": "Wie können IT-Schutzziele technisch unterstützt werden?",
+        "answer": "Beispielsweise durch digitale Signaturen zur Sicherstellung der Integrität oder durch technische organisatorische Maßnahmen (TOM) für die Vertraulichkeit."
+    }
+]
