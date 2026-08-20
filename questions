@@ -1,0 +1,530 @@
+[
+  {
+    "question": "Was versteht man unter der Open-Source-Philosophie im Linux-Kontext?",
+    "answer": "Die Open-Source-Philosophie besagt, dass der Quellcode von Software frei zugänglich, veränderbar und verbreitbar sein muss. Dies fördert kollaborative Entwicklung, Transparenz, erhöhte Sicherheit durch Peer-Review und Unabhängigkeit von einzelnen Software-Herstellern."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen dem Linux-Kernel und einer Shell?",
+    "answer": "Der Kernel ist der Kern des Betriebssystems, der direkt mit der Hardware interagiert und Systemressourcen (CPU, RAM, Festplatten) verwaltet. Die Shell ist eine Benutzeroberfläche (Kommandozeileninterpreter wie Bash), die Benutzereingaben entgegennimmt, interpretiert und an den Kernel weiterleitet."
+  },
+  {
+    "question": "Was ist der FHS (File Hierarchy Standard) und welche Aufgaben haben die Verzeichnisse /etc, /var und /bin?",
+    "answer": "Der FHS definiert die Standard-Verzeichnisstruktur unter Linux. /etc enthält systemweite Konfigurationsdateien. /var dient der Ablage variabler Daten wie Logdateien (logs), Mail-Spools und temporären Cache-Inhalten. /bin enthält essenzielle Systembefehle (Binärdateien) für alle Benutzer."
+  },
+  {
+    "question": "Wie ist die allgemeine Syntax eines Linux-Kommandozeilenbefehls aufgebaut?",
+    "answer": "Die Syntax folgt dem Muster: `Befehl [Optionen] [Argumente]`. Optionen (meist mit `-` oder `--`) modifizieren das Verhalten des Befehls. Argumente geben an, worauf der Befehl angewendet wird (z. B. ein Dateipfad)."
+  },
+  {
+    "question": "Was unterscheidet einen absoluten Pfad von einem relativen Pfad unter Linux?",
+    "answer": "Ein absoluter Pfad beginnt immer an der Wurzel des Dateisystems mit einem `/` (z. B. `/var/log/syslog`) und ist unabhängig vom aktuellen Arbeitsverzeichnis. Ein relativer Pfad geht vom aktuellen Verzeichnis aus und enthält kein führendes `/` (z. B. `../images/photo.png`)."
+  },
+  {
+    "question": "Welche Linux-Befehle werden zum Kopieren, Verschieben/Umbenennen und Löschen von Dateien verwendet?",
+    "answer": "Zum Kopieren wird `cp` genutzt (mit `-r` für Verzeichnisse). Zum Verschieben oder Umbenennen dient `mv`. Zum Löschen von Dateien wird `rm` verwendet (mit `-r` für Verzeichnisse, `-f` erzwingt das Löschen ohne Nachfrage)."
+  },
+  {
+    "question": "Wie ruft man die integrierte Dokumentation (Hilfeseite) eines Linux-Befehls auf?",
+    "answer": "Mit dem Befehl `man [Befehl]` öffnet man die offizielle Handbuchseite (Manpage). Für eine kurze Befehlsübersicht kann häufig auch die Option `--help` oder `-h` an den Befehl angehängt werden."
+  },
+  {
+    "question": "Wie funktionieren die Wildcards/Metazeichen *, ? und [] bei der Dateinamenexpansion?",
+    "answer": "`*` steht für beliebig viele (auch null) Zeichen. `?` repräsentiert genau ein beliebiges Zeichen. In eckigen Klammern `[...]` wird eine Zeichenklasse definiert (z. B. `[a-z]` für einen beliebigen Kleinbuchstaben, `[15]` für 1 oder 5)."
+  },
+  {
+    "question": "Wie sucht man mit dem Befehl 'find' nach Dateien und wie filtert man Textinhalte mit 'grep'?",
+    "answer": "`find` sucht im Verzeichnisbaum nach Dateien anhand von Kriterien (z. B. `find /var/log -name \"*.log\"`). `grep` durchsucht Textdaten oder Dateien zeilenweise nach Mustern (z. B. `grep \"Error\" /var/log/syslog`)."
+  },
+  {
+    "question": "Mit welchen Befehlen lassen sich freier Festplattenspeicher und die RAM-Auslastung anzeigen?",
+    "answer": "Der Befehl `df -h` zeigt den freien und belegten Speicherplatz aller gemounteten Dateisysteme im menschenlesbaren Format an. Der Befehl `free -h` gibt Auskunft über den belegten und freien physischen Arbeitsspeicher (RAM) sowie Swap-Speicher."
+  },
+  {
+    "question": "Was passiert, wenn man versucht, ein nicht-leeres Verzeichnis mit 'rmdir' zu löschen, und wie löst man das Problem?",
+    "answer": "Der Befehl `rmdir` schlägt mit der Fehlermeldung \"Verzeichnis nicht leer\" fehl, da er nur für komplett leere Ordner konzipiert ist. Die Lösung ist die Verwendung des rekursiven Löschbefehls `rm -r [Verzeichnisname]`."
+  },
+  {
+    "question": "Wie erzeugt man eine neue, leere Datei und erstellt gleichzeitig ein verschachteltes Verzeichnis in einem Schritt?",
+    "answer": "Man erstellt das verschachtelte Verzeichnis mit `mkdir -p /pfad/zu/neuem/ordner` (der Parameter `-p` legt fehlende Zwischenordner automatisch an) und führt danach `touch /pfad/zu/neuem/ordner/datei.txt` aus, um die leere Datei zu erzeugen."
+  },
+  {
+    "question": "Welche drei Standarddatenströme existieren in der Bash und welche Dateideskriptoren (FD) sind ihnen zugeordnet?",
+    "answer": "1. Standardeingabe (stdin, FD 0): Erwartet Eingaben, standardmäßig über die Tastatur. 2. Standardausgabe (stdout, FD 1): Gibt reguläre Ausgaben aus, standardmäßig auf dem Bildschirm. 3. Standardfehler (stderr, FD 2): Gibt Fehlermeldungen aus, standardmäßig ebenfalls auf dem Bildschirm."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen den Umleitungsoperatoren '>' und '>>'?",
+    "answer": "Der Operator `>` leitet die Standardausgabe (stdout) in eine Datei um und überschreibt deren Inhalt komplett. Der Operator `>>` leitet stdout ebenfalls um, hängt die neuen Daten jedoch an das Ende der bestehenden Datei an, ohne diese zu löschen."
+  },
+  {
+    "question": "Wie leitet man gezielt Fehlermeldungen (stderr) in eine Datei um und wie bündelt man stdout und stderr?",
+    "answer": "Gezielte Fehlerumleitung erfolgt mit `2> datei.log`. Um sowohl stdout (FD 1) als auch stderr (FD 2) in dieselbe Datei umzuleiten, nutzt man die Syntax `command > datei.log 2>&1` oder kurz ab Bash 4.0 `command &> datei.log`."
+  },
+  {
+    "question": "Wie funktioniert die Weiterleitung mit einer Pipe (|) und worin unterscheidet sie sich von einer normalen Umleitung?",
+    "answer": "Eine Pipe (`|`) verbindet die Standardausgabe (stdout) des linken Befehls direkt mit der Standardeingabe (stdin) des rechten Befehls (z. B. `ls | grep test`). Eine normale Umleitung (`>`) hingegen schreibt Daten in eine physische Datei auf dem Datenträger, statt sie direkt an einen Prozess zu übergeben."
+  },
+  {
+    "question": "Was ist die Aufgabe des Befehls 'tee' und wann setzt man ihn ein?",
+    "answer": "Der Befehl `tee` liest von stdin, gibt die Daten auf der Standardausgabe aus UND schreibt sie zeitgleich in eine oder mehrere Dateien. Er wird verwendet, wenn man den Output eines Befehls im Terminal mitverfolgen und gleichzeitig in einem Logfile sichern möchte (z. B. `ls | tee output.txt`)."
+  },
+  {
+    "question": "Was bewirken die logischen Operatoren '&&' und '||' bei der Befehlsverkettung?",
+    "answer": "Bei `cmd1 && cmd2` wird `cmd2` nur ausgeführt, wenn `cmd1` erfolgreich war (Exit-Status 0). Bei `cmd1 || cmd2` wird `cmd2` nur ausgeführt, wenn `cmd1` fehlerhaft war (Exit-Status ungleich 0). Dies ermöglicht einfache Bedingungslogik auf der Shell."
+  },
+  {
+    "question": "Wie definiert man eine lokale Shell-Variable und wie transformiert man sie in eine systemweit verfügbare Umgebungsvariable?",
+    "answer": "Eine lokale Variable wird mittels `NAME=\"Wert\"` definiert. Um sie für alle Kindprozesse und nachfolgenden Shell-Sitzungen verfügbar zu machen, muss sie mit `export NAME` (oder direkt `export NAME=\"Wert\"`) als Umgebungsvariable deklariert werden."
+  },
+  {
+    "question": "Was versteht man unter Kommandosubstitution und wie lautet die moderne Syntax dafür?",
+    "answer": "Unter Kommandosubstitution versteht man das Ausführen eines Befehls und das direkte Einsetzen seiner Ausgabe anstelle des Befehlsaufrufs. Die moderne, verschachtelbare Syntax lautet `$(Befehl)` (z. B. `HEUTE=$(date)`), was die veralteten Backticks (`` `Befehl` ``) ablöst."
+  },
+  {
+    "question": "Wie unterscheidet sich das Verhalten von einfachen Anführungszeichen (') und doppelten Anführungszeichen (\")?",
+    "answer": "In einfachen Anführungszeichen (`'...'`) verliert jedes Sonderzeichen seine Bedeutung; Variablen werden nicht aufgelöst (Bsp.: `'$VAR'` gibt `$VAR` aus). In doppelten Anführungszeichen (`\"...\"`) bleiben Metazeichen wie `$` (Variablenauflösung) und `` ` `` oder `$()` (Kommandosubstitution) aktiv."
+  },
+  {
+    "question": "Was ist der Exit-Status eines Linux-Befehls und wie prüft man ihn unmittelbar nach der Ausführung?",
+    "answer": "Jeder Linux-Befehl gibt nach Beendigung einen numerischen Statuscode an das Elternsystem zurück. Der Wert `0` steht für Erfolg, während ein Wert von `1` bis `255` einen Fehler signalisiert. Der Exit-Status des zuletzt ausgeführten Befehls wird in der speziellen Variable `$?` gespeichert."
+  },
+  {
+    "question": "Warum führt die Zuweisung 'var = \"wert\"' in der Bash zu einem Syntaxfehler?",
+    "answer": "Die Bash trennt Argumente durch Leerzeichen. Bei `var = \"wert\"` interpretiert die Bash `var` als auszuführenden Befehl und `=` sowie `\"wert\"` als dessen Parameter. Eine Variablenzuweisung darf um das Gleichheitszeichen herum absolut keine Leerzeichen enthalten: `var=\"wert\"`."
+  },
+  {
+    "question": "Mit welchem Shell-Einzeiler filtert man alle Zeilen mit dem Wort 'Fehler' aus einer Logdatei, zählt diese und speichert das Ergebnis?",
+    "answer": "Der Befehl lautet: `grep -i \"Fehler\" /pfad/zu/datei.log | wc -l > fehler_anzahl.txt`. Hier filtert `grep` nach dem Wort, reicht die Zeilen an `wc -l` (word count lines) weiter, welches die Zeilen zählt, und schreibt das Ergebnis per `>` in die Zieldatei."
+  },
+  {
+    "question": "Was ist die Kernaufgabe eines Paketmanagers (wie apt) und was unterscheidet 'apt update' von 'apt upgrade'?",
+    "answer": "Ein Paketmanager automatisiert die Installation, Aktualisierung und Deinstallation von Software inklusive der Auflösung von Abhängigkeiten. `apt update` aktualisiert die lokalen Paketindex-Listen aus den Repositories. `apt upgrade` installiert die tatsächlich verfügbaren neueren Versionen der installierten Pakete."
+  },
+  {
+    "question": "Wie ist das Linux-Berechtigungsmodell aufgebaut und für welche Klassen gilt es?",
+    "answer": "Es teilt Berechtigungen in Lesen (`r`), Schreiben (`w`) und Ausführen (`x`) auf. Diese Rechte gelten für drei Klassen: den Besitzer/User (`u`), die zugewiesene Gruppe (`g`) und alle anderen Benutzer/Others (`o`)."
+  },
+  {
+    "question": "Wie übersetzt man die Berechtigung 'rwxr-xr-x' in die oktale Schreibweise und was bedeuten die Rechte konkret?",
+    "answer": "Die Berechtigung entspricht oktal `755`. Berechnung: `rwx` = 4+2+1 = 7 (Besitzer darf alles); `r-x` = 4+0+1 = 5 (Gruppe darf lesen/ausführen); `r-x` = 4+0+1 = 5 (Andere dürfen lesen/ausführen). Schreibrechte für Gruppe und Andere sind entzogen."
+  },
+  {
+    "question": "Mit welchen drei Befehlen ändert man Dateiberechtigungen, Besitzer und Gruppenzugehörigkeit einer Datei?",
+    "answer": "Mit `chmod` ändert man die Zugriffsrechte (z. B. `chmod 755 datei`). Mit `chown` ändert man den Besitzer (z. B. `chown user datei`). Mit `chgrp` ändert man die Gruppe einer Datei (alternativ auch mit `chown user:gruppe datei`)."
+  },
+  {
+    "question": "Was bewirken die speziellen Berechtigungs-Bits SetUID, SetGID und das Sticky Bit?",
+    "answer": "SetUID (`u+s`): Führt eine Datei mit den Rechten des Besitzers aus (z. B. `passwd`). SetGID (`g+s`): Neue Dateien in diesem Ordner erben automatisch die Gruppe des Ordners. Sticky Bit (`+t`): Verhindert, dass Benutzer Dateien anderer Benutzer in diesem Ordner löschen oder verschieben können (z. B. `/tmp`)."
+  },
+  {
+    "question": "In welchen Systemdateien werden Benutzerkonten sowie Passwörter gespeichert und wie legt man einen Benutzer an?",
+    "answer": "Benutzerkonten liegen im Klartext in `/etc/passwd`. Die kryptografisch gehashten Passwörter liegen streng geschützt in `/etc/shadow`. Ein neuer Benutzer wird mit dem Befehl `useradd -m [name]` (oder dem interaktiven Wrapper `adduser [name]`) angelegt."
+  },
+  {
+    "question": "Wie fügt man einen bestehenden Linux-Benutzer einer zusätzlichen (sekundären) Gruppe hinzu?",
+    "answer": "Der Befehl lautet: `usermod -aG [gruppenname] [benutzername]`. Die Option `-a` (append) ist essenziell, da der Benutzer sonst aus allen seinen anderen sekundären Gruppen entfernt und nur noch der angegebenen Gruppe zugeordnet wird."
+  },
+  {
+    "question": "Welche modernen Befehle ersetzen die veralteten Befehle 'ifconfig' und 'route' zur IP- und Routingkonfiguration?",
+    "answer": "Der veraltete Befehl `ifconfig` wird durch `ip address` (kurz `ip a`) ersetzt. Der veraltete Befehl `route` wird durch `ip route` (kurz `ip r`) abgelöst. Diese sind Teil des modernen `iproute2`-Pakets."
+  },
+  {
+    "question": "Mit welchen Linux-Kommandozeilentools testet man die grundlegende Netzwerkkonnektivität und die DNS-Auflösung?",
+    "answer": "Die Konnektivität auf IP-Ebene testet man mit `ping [IP-Adresse/Host]`. Die DNS-Namensauflösung wird vorzugsweise mit den Tools `dig [Domainname]` oder `host [Domainname]` (aus dem Paket dnsutils) geprüft."
+  },
+  {
+    "question": "Wie verwaltet man Systemdienste (Dienste) mit dem systemd-Werkzeug 'systemctl'?",
+    "answer": "Dienste startet man mit `systemctl start [dienst]`, stoppt sie mit `systemctl stop [dienst]` und prüft sie mit `systemctl status [dienst]`. Um einen Dienst für den automatischen Start beim Systemstart zu aktivieren bzw. zu deaktivieren, nutzt man `systemctl enable` bzw. `systemctl disable`."
+  },
+  {
+    "question": "Warum kann ein Benutzer eine Datei nicht löschen, obwohl er an der Datei selbst volles Schreibrecht (rwx) besitzt?",
+    "answer": "Unter Linux ist das Löschen einer Datei eine Operation, die das *Verzeichnis* verändert, in dem die Datei liegt. Um eine Datei löschen zu dürfen, muss der Benutzer Schreibrechte (`w`) für das *umgebende Verzeichnis* besitzen, unabhängig von den Rechten der Datei selbst."
+  },
+  {
+    "question": "Wie sieht die Befehlsabfolge aus, um ein Verzeichnis '/share' zu erstellen, das für die Gruppe 'entwickler' beschreibbar ist?",
+    "answer": "1. Gruppe erstellen: `groupadd entwickler` \n2. Verzeichnis anlegen: `mkdir /share` \n3. Gruppe dem Verzeichnis zuweisen: `chown :entwickler /share` \n4. Berechtigungen setzen (rwxrwxr-x): `chmod 775 /share` \n5. Optional SetGID-Bit setzen, damit neue Dateien automatisch der Gruppe gehören: `chmod g+s /share`"
+  },
+  {
+    "question": "Was versteht man unter IT-Virtualisierung und welchen primären Vorteil bietet sie?",
+    "answer": "Virtualisierung ist die Abstraktion physischer IT-Ressourcen (CPU, RAM, Storage) durch eine Softwareschicht, um mehrere isolierte Betriebssysteminstanzen simultan auf einer physischen Hardware zu betreiben. Der Hauptvorteil ist eine deutliche Effizienz- und Auslastungssteigerung der Hardware bei gleichzeitiger Kostensenkung."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen einem Typ-1 (Bare-Metal) und einem Typ-2 (Hosted) Hypervisor?",
+    "answer": "Ein Typ-1 Hypervisor läuft direkt auf der physischen Hardware ohne darunterliegendes Betriebssystem (z. B. Proxmox VE, VMware ESXi), was maximale Performance und minimale Latenz bietet. Ein Typ-2 Hypervisor setzt als Anwendung auf einem bestehenden Betriebssystem auf (z. B. VirtualBox, VMware Workstation)."
+  },
+  {
+    "question": "Was ist Paravirtualisierung und wie unterscheidet sie sich von der Vollvirtualisierung?",
+    "answer": "Bei der Vollvirtualisierung wird dem Gastbetriebssystem eine vollständige Hardwareumgebung vorgegaukelt; es muss nicht modifiziert werden. Bei der Paravirtualisierung ist sich das Gastbetriebssystem bewusst, dass es in einer VM läuft, und kommuniziert über spezielle Schnittstellen (Hypercalls) direkt mit dem Hypervisor, was die Leistung massiv erhöht."
+  },
+  {
+    "question": "Was versteht man unter 'Nested Virtualisierung' und wann wird diese eingesetzt?",
+    "answer": "Nested Virtualisierung bezeichnet das Betreiben eines Hypervisors innerhalb einer bereits virtuell laufenden Maschine (Hypervisor-in-Hypervisor). Dies wird primär in Test-, Labor- und Schulungsumgebungen eingesetzt, um Virtualisierungsumgebungen (wie Proxmox oder VMware) gefahrlos zu evaluieren."
+  },
+  {
+    "question": "Was ist Proxmox Virtual Environment (PVE) und welche Technologien kombiniert es standardmäßig?",
+    "answer": "Proxmox VE ist eine Open-Source-Virtualisierungsplattform vom Typ-1 (basierend auf Debian Linux). Sie kombiniert KVM (Kernel-based Virtual Machine) für die vollständige Hardwarevirtualisierung von VMs mit LXC (Linux Containers) für extrem leichtgewichtige, containerbasierte Virtualisierung unter einer zentralen Web-Benutzeroberfläche."
+  },
+  {
+    "question": "Warum muss für eine VM in Proxmox der CPU-Typ auf 'Host' gestellt werden, wenn man darin virtualisieren will?",
+    "answer": "Standardmäßig emuliert KVM einen Standard-Prozessortyp, der die Virtualisierungs-Erweiterungen (Intel VT-x / AMD-V) der physischen CPU nicht an die VM weitergibt. Die Einstellung `qm set [VMID] --cpu host` schleift die exakten CPU-Features des physischen Hosts direkt durch, was Nested Virtualisierung erst ermöglicht."
+  },
+  {
+    "question": "Welche Rolle spielt die standardmäßige Netzwerkbrücke 'vmbr0' in Proxmox VE?",
+    "answer": "Die Linux-Bridge `vmbr0` agiert wie ein virtueller Software-Switch auf dem Proxmox-Host. Sie verbindet die virtuellen Netzwerkkarten (vNICs) der VMs mit der physischen Netzwerkkarte (NIC) des Host-Systems, wodurch die VMs eigene IP-Adressen im realen lokalen Netzwerk erhalten können."
+  },
+  {
+    "question": "Wann sollte man in Proxmox KVM (VMs) und wann LXC (Container) einsetzen?",
+    "answer": "KVM (VMs) nutzt man, wenn maximale Isolation erforderlich ist, ein anderes Kernel-Betriebssystem benötigt wird (z. B. Windows, BSD) oder eigene Kernel-Module geladen werden müssen. LXC nutzt man für Linux-Dienste, um RAM und CPU einzusparen, da LXC direkt den Linux-Kernel des Hosts mitnutzt."
+  },
+  {
+    "question": "Was ist VirtIO und warum ist die Installation von VirtIO-Treibern in VMs ratsam?",
+    "answer": "VirtIO ist ein Standard für paravirtualisierte Treiber (z. B. für Netzwerk und Festplatten). Da sie die Performance-Engpässe einer vollständigen Hardware-Emulation umgehen und direkt mit dem Hypervisor kommunizieren, erhöhen sie den Datendurchsatz bei Speicher- und Netzwerkzugriffen drastisch."
+  },
+  {
+    "question": "Welche Kernvoraussetzungen müssen erfüllt sein, um Hochverfügbarkeit (HA) in Proxmox zu nutzen?",
+    "answer": "Es werden mindestens drei Proxmox-Knoten für ein Quorum benötigt (um Split-Brain-Szenarien zu verhindern), ein redundantes, schnelles Netzwerk für das Cluster-Management sowie ein gemeinsames, von allen Knoten erreichbares Speichersystem (Shared Storage wie SAN, NFS, Ceph), auf dem die VM-Festplatten liegen."
+  },
+  {
+    "question": "Was ist die Ursache für den VM-Fehler 'KVM: disabled by bios' beim Starten einer virtuellen Maschine?",
+    "answer": "Dieser Fehler bedeutet, dass die Hardwarevirtualisierung (Intel VT-x oder AMD-V) entweder im physischen BIOS/UEFI des Mainboards deaktiviert ist, oder bei Nested Virtualisierung die CPU-Erweiterungen nicht vom primären Hypervisor an die VM durchgereicht wurden."
+  },
+  {
+    "question": "Wie läuft die grundlegende Erstellung und Remoteverbindung einer VM in Proxmox ab?",
+    "answer": "1. ISO-Image im PVE-Storage hochladen. \n2. Im Web-UI auf \"Erstelle VM\" klicken, ID, Name, CPU, RAM und Netzwerk (`vmbr0`) konfigurieren. \n3. Die erstellte VM starten. \n4. Über die integrierte HTML5-Konsole (noVNC) die Installation des Betriebssystems durchführen und den SSH-Zugriff für die dauerhafte Remoteverbindung konfigurieren."
+  },
+  {
+    "question": "Was ist die Aufgabe von DHCP im Netzwerk und auf welchen Ports basiert es?",
+    "answer": "DHCP (Dynamic Host Configuration Protocol) automatisiert die Zuweisung von IP-Adressen und Netzwerkeinstellungen (Subnetzmaske, Gateway, DNS-Server) an Clients im Netzwerk. Es basiert auf UDP und nutzt Port 67 für den DHCP-Server und Port 68 für den DHCP-Client."
+  },
+  {
+    "question": "Erkläre den Ablauf des DORA-Prozesses bei der Adresszuweisung.",
+    "answer": "1. **Discover (Broadcast)**: Client sucht im Netz nach einem DHCP-Server. \n2. **Offer (Broadcast/Unicast)**: Server bietet dem Client eine freie IP-Adresse an. \n3. **Request (Broadcast)**: Client fordert die angebotene IP-Adresse offiziell an. \n4. **Acknowledge (Broadcast/Unicast)**: Server bestätigt die Zuweisung und sendet die Netzwerkkonfiguration."
+  },
+  {
+    "question": "Warum wird der DHCP-Request im DORA-Prozess als Broadcast gesendet?",
+    "answer": "Da sich im Netzwerk mehrere DHCP-Server befinden können, die alle ein DHCP-Offer gesendet haben, teilt der Client durch einen Broadcast allen Servern gleichzeitig mit, welches Angebot er angenommen hat. Die nicht gewählten Server können ihre reservierten IP-Adressen sofort wieder freigeben."
+  },
+  {
+    "question": "Was ist die DHCP 'Lease Time'?",
+    "answer": "Die Lease Time ist die vertraglich festgelegte Gültigkeitsdauer, für die ein DHCP-Server einem Client eine bestimmte IP-Adresse zuweist. Nach Ablauf dieser Zeit darf der Client die IP-Adresse nicht mehr verwenden, es sei denn, die Lease wird rechtzeitig verlängert."
+  },
+  {
+    "question": "Erkläre die Timer T1 und T2 bei der Lease-Erneuerung.",
+    "answer": "Der **T1-Timer** läuft standardmäßig bei **50 %** der Lease Time ab; der Client versucht per Unicast beim ursprünglichen Server die Lease zu erneuern. Schlägt dies fehl, läuft bei **87,5 %** der **T2-Timer** ab; der Client sendet nun einen Broadcast an *alle* verfügbaren DHCP-Server im Netz zur Erneuerung."
+  },
+  {
+    "question": "Was ist ein DHCP-Relay-Agent und wann ist sein Einsatz zwingend erforderlich?",
+    "answer": "Da Router standardmäßig keine Broadcasts weiterleiten, können Clients in anderen Subnetzen den DHCP-Server nicht direkt erreichen. Ein DHCP-Relay-Agent fängt die DHCP-Broadcasts der Clients ab, wandelt sie in Unicast-Pakete um und leitet sie direkt an den DHCP-Server in einem anderen Subnetz weiter."
+  },
+  {
+    "question": "Was ist eine DHCP-Adressreservierung und worin liegt ihr Vorteil?",
+    "answer": "Eine Reservierung ordnet einer spezifischen Hardware-Adresse (MAC-Adresse) im DHCP-Server fest eine bestimmte IP-Adresse zu. Der Vorteil: Das Gerät erhält immer dieselbe IP (wie bei statischer Konfiguration), kann aber zentral über den DHCP-Server administriert werden (z. B. bei DNS-Server-Wechsel)."
+  },
+  {
+    "question": "Was sind DHCP-Ausschlüssen (Exclusions) und wozu dienen sie?",
+    "answer": "DHCP-Ausschlüsse sind definierte IP-Adressbereiche innerhalb eines DHCP-Pools, die der DHCP-Server niemals dynamisch an Clients vergeben darf. Sie dienen dazu, IP-Adresskonflikte mit manuell/statisch konfigurierten Netzwerkgeräten (wie Servern, Routern, Druckern) zu verhindern."
+  },
+  {
+    "question": "Nenne drei essenzielle DHCP-Optionen neben der IP-Adresse und Subnetzmaske.",
+    "answer": "1. **Option 3 (Router)**: Teilt dem Client das Standardgateway mit. \n2. **Option 6 (DNS-Server)**: Teilt die IP-Adressen der verfügbaren DNS-Server für die Namensauflösung mit. \n3. **Option 15 (Domain Name)**: Bestimmt das lokale DNS-Suffix (z. B. `firma.local`)."
+  },
+  {
+    "question": "Wie lösen moderne Netzwerke IP-Adresskonflikte bei der Zuweisung durch DHCP?",
+    "answer": "Vor der Zuweisung prüft der DHCP-Server häufig per ICMP Echo Request (Ping), ob die IP frei ist. Parallel dazu prüft der Client die ihm angebotene IP-Adresse unmittelbar vor der Nutzung mittels eines Gratuitous ARP (Address Resolution Protocol) im Netzwerk. Meldet sich ein Gerät, verweigert der Client die IP und fordert eine neue an."
+  },
+  {
+    "question": "Warum erhält ein Client die IP-Adresse 169.254.x.x (APIPA) und was bedeutet das?",
+    "answer": "Der Client hat nach dem Senden von DHCP-Discover-Nachrichten keine Antwort erhalten (z. B. wegen Kabeldefekt, Serverausfall oder falschem VLAN). Dank APIPA (Automatic Private IP Addressing) konfiguriert sich der Client selbst mit einer IP im Bereich `169.254.0.0/16`, um zumindest lokal kommunizieren zu können."
+  },
+  {
+    "question": "Wie sieht ein minimaler Konfigurationsblock für ein Subnetz im ISC-DHCP-Server ('dhcpd.conf') aus?",
+    "answer": "```text\nsubnet 192.168.1.0 netmask 255.255.255.0 {\n  range 192.168.1.100 192.168.1.200;\n  option routers 192.168.1.1;\n  option domain-name-servers 192.168.1.10, 8.8.8.8;\n  default-lease-time 86400;\n}\n``` Dieser Block definiert den IP-Pool, das Gateway, die DNS-Server und die Standard-Lease-Time."
+  },
+  {
+    "question": "Wie ist der hierarchische Aufbau des DNS-Namensraums organisiert (Beispiel: cloud.example.com.)?",
+    "answer": "Die DNS-Hierarchie läuft von rechts nach links: \n1. **Root-Zone** (repräsentiert durch den abschließenden Punkt `.`). \n2. **Top-Level-Domain** (TLD, z. B. `.com`). \n3. **Second-Level-Domain** (z. B. `example`). \n4. **Subdomain / Hostname** (z. B. `cloud`)."
+  },
+  {
+    "question": "Was unterscheidet eine rekursive von einer iterativen DNS-Abfrage?",
+    "answer": "Bei einer **rekursiven** Abfrage übernimmt der angefragte DNS-Server (Resolver) die komplette Arbeit für den Client und fragt so lange andere Nameserver ab, bis er die finale IP liefert. Bei einer **iterativen** Abfrage liefert der Nameserver dem Anfrager nur einen Verweis (Referral) auf den nächsten Nameserver in der Hierarchie."
+  },
+  {
+    "question": "Wie funktioniert DNS-Caching und wie wird die Lebensdauer der Daten gesteuert?",
+    "answer": "Um Netzwerklast zu minimieren und Abfragen zu beschleunigen, speichern Clients und DNS-Resolver einmal aufgelöste IP-Adressen lokal ab. Die Lebensdauer dieser Einträge wird durch den TTL-Wert (Time-to-Live) bestimmt, der in Sekunden vom zuständigen Nameserver für jeden Record vorgegeben wird."
+  },
+  {
+    "question": "Was versteht man unter einer Forward-Lookup-Zone und einer Reverse-Lookup-Zone?",
+    "answer": "Eine **Forward-Lookup-Zone** übersetzt menschenlesbare Hostnamen in numerische IP-Adressen (z. B. `example.com` -> `93.184.216.34`). Eine **Reverse-Lookup-Zone** macht genau das Gegenteil: Sie löst eine bekannte IP-Adresse in den dazugehörigen Hostnamen auf."
+  },
+  {
+    "question": "Wozu dienen DNS-A-Records und DNS-AAAA-Records?",
+    "answer": "Ein **A-Record** (Address Record) bildet einen Hostnamen auf eine IPv4-Adresse (32-Bit) ab. Ein **AAAA-Record** (Quad-A Record) bildet einen Hostnamen auf eine neuere IPv6-Adresse (128-Bit) ab."
+  },
+  {
+    "question": "Was ist ein CNAME-Record und wann wird er verwendet?",
+    "answer": "Ein **CNAME-Record** (Canonical Name) ist ein Alias (Verweis) von einem Hostnamen auf einen anderen Hostnamen (z. B. `www.example.com` verweist auf `example.com`). Er wird verwendet, um für eine IP-Adresse mehrere Dienste unter verschiedenen Namen zu führen, ohne bei einer IP-Änderung alle Records anpassen zu müssen."
+  },
+  {
+    "question": "Welche Aufgaben haben MX-Records und TXT-Records?",
+    "answer": "Ein **MX-Record** (Mail Exchanger) gibt den für eine Domain zuständigen Mailserver an. Ein **TXT-Record** speichert beliebigen Freitext und wird heute primär für Sicherheitsverfahren zur Domain-Verifizierung und E-Mail-Validierung (wie SPF, DKIM und DMARC) verwendet."
+  },
+  {
+    "question": "Was ist ein PTR-Record und warum ist er für Mailserver extrem wichtig?",
+    "answer": "Ein **PTR-Record** (Pointer Record) bildet eine IP-Adresse in der Reverse-Lookup-Zone auf einen Hostnamen ab. Er ist für E-Mail-Server essenziell, da empfangende Mailserver über den PTR-Record prüfen (Reverse DNS Lookup), ob die IP-Adresse des absendenden Servers tatsächlich zu seiner angegebenen Domain gehört (Spamschutz)."
+  },
+  {
+    "question": "Welche Funktion haben die SOA- und NS-Records in einer Zonendatei?",
+    "answer": "Der **SOA-Record** (Start of Authority) definiert globale Parameter der Zone, wie den primären Nameserver, Kontaktdaten des Administrators, Seriennummer (zur Replikationskontrolle) und Refresh-Timer. Der **NS-Record** (Name Server) listet alle autoritativen Nameserver auf, die für diese Zone zuständig sind."
+  },
+  {
+    "question": "Was ist ein FQDN und warum endet dieser theoretisch mit einem Punkt?",
+    "answer": "Ein FQDN (Fully Qualified Domain Name) ist ein absolut eindeutiger Domainname, der den Pfad von der Hostebene bis zur DNS-Wurzel abbildet. Der abschließende Punkt (z. B. `www.google.com.`) kennzeichnet explizit die DNS-Wurzel (Root-Zone) und verhindert, dass das lokale DNS-Such-Suffix an die Abfrage angehängt wird."
+  },
+  {
+    "question": "Warum sind Änderungen an DNS-Records nach der Konfiguration oft nicht sofort sichtbar?",
+    "answer": "Dies liegt am DNS-Caching. Nameserver und Clients weltweit haben den alten Eintrag bis zum Ablauf seiner TTL (Time-To-Live) zwischengespeichert. Erst nach Ablauf dieses Timers fragen sie den autoritativen Nameserver erneut ab und erhalten den aktualisierten Wert."
+  },
+  {
+    "question": "Mit welchen Befehlen fragst du unter Linux die IP und den MX-Record der Domain 'example.com' ab?",
+    "answer": "Zur IP-Abfrage nutzt man `dig example.com` oder kurz `dig example.com +short`. Zur Abfrage des MX-Records verwendet man `dig example.com MX` oder alternativ das Tool `host -t MX example.com`."
+  },
+  {
+    "question": "Was ist SSH, welche Dienste stellt es bereit und welcher Standard-Port wird genutzt?",
+    "answer": "SSH (Secure Shell) ist ein kryptografisches Netzwerkprotokoll für den sicheren, verschlüsselten Zugriff auf entfernte Systeme über unsichere Netzwerke. Es stellt Shell-Zugriffe, Dateiübertragungen (SFTP/SCP) und Port-Weiterleitungen (Tunneling) bereit. Der Standard-Port ist **22** (TCP)."
+  },
+  {
+    "question": "Wie funktioniert das Prinzip der SSH-Public-Key-Authentifizierung?",
+    "answer": "Es basiert auf asymmetrischer Kryptografie: Der Client besitzt einen privaten Schlüssel (Private Key, geheim) und einen öffentlichen Schlüssel (Public Key). Der Server besitzt nur den Public Key. Beim Login sendet der Server eine Challenge, die der Client mit seinem Private Key signiert. Der Server verifiziert die Signatur mit dem Public Key."
+  },
+  {
+    "question": "Mit welchem Befehl generiert man ein SSH-Schlüsselpaar und wo wird es standardmäßig abgelegt?",
+    "answer": "Mit dem Befehl `ssh-keygen -t ed25519` (empfohlenes, sicheres Verfahren) generiert man das Schlüsselpaar. Die Schlüssel werden standardmäßig im versteckten Benutzerverzeichnis `~/.ssh/` abgelegt (z. B. `id_ed25519` für den Private Key und `id_ed25519.pub` für den Public Key)."
+  },
+  {
+    "question": "Wie überträgt man den Public Key sicher auf einen Server und in welcher Datei wird er dort gespeichert?",
+    "answer": "Der Public Key wird am einfachsten mit dem Befehl `ssh-copy-id -i ~/.ssh/id_ed25519.pub [user]@[host]` übertragen. Auf dem Zielserver wird der Schlüssel in der Datei `~/.ssh/authorized_keys` im Home-Verzeichnis des jeweiligen Zielbenutzers angehängt."
+  },
+  {
+    "question": "Nenne drei wichtige Direktiven in der '/etc/ssh/sshd_config', um den SSH-Daemon abzusichern.",
+    "answer": "1. `PermitRootLogin no` (verhindert den direkten Root-Login). \n2. `PasswordAuthentication no` (erzwingt die sicherere Public-Key-Authentifizierung). \n3. `PubkeyAuthentication yes` (aktiviert die Schlüsselauthentifizierung)."
+  },
+  {
+    "question": "Wie und warum ändert man den Standard-SSH-Port?",
+    "answer": "Man ändert ihn in der Datei `/etc/ssh/sshd_config` über die Zeile `Port [neuer_port]` (z. B. `Port 2222`) und startet den Dienst mit `systemctl restart sshd` neu. Dies dient dem Schutz vor automatisierten Brute-Force-Angriffen und Skript-Kiddies (Security durch Obscurity)."
+  },
+  {
+    "question": "Was ist der Zweck der SSH-Client-Konfigurationsdatei und wo liegt sie?",
+    "answer": "Die Datei liegt unter `~/.ssh/config` beim Client. Sie erlaubt es, Verbindungsparameter (Host, IP, Port, Username, Key-Datei) unter einem kurzen Alias abzuspeichern, sodass eine Verbindung statt mit `ssh -p 2222 admin@192.168.1.50` einfach mit `ssh aliasname` aufgebaut werden kann."
+  },
+  {
+    "question": "Was ist der 'ssh-agent' und welchen Vorteil bietet er?",
+    "answer": "Der `ssh-agent` ist ein Hintergrundprozess beim Client, der SSH-Schlüssel im Arbeitsspeicher bereithält. Der Vorteil: Schützt man seinen Private Key mit einer Passphrase, muss man diese dank `ssh-agent` nur einmalig beim Sessionstart eingeben, danach autorisiert der Agent alle SSH-Verbindungen automatisch im Hintergrund."
+  },
+  {
+    "question": "Was bedeutet der Fehler 'Host key verification failed' und wie verhält man sich korrekt?",
+    "answer": "Dieser Fehler signalisiert, dass der kryptografische Fingerabdruck (Host Key) des Servers nicht mehr mit dem in `~/.ssh/known_hosts` gespeicherten Wert übereinstimmt. Das kann auf eine Server-Neuinstallation hinweisen oder auf einen Man-in-the-Middle-Angriff. Nach Verifizierung entfernt man den alten Eintrag mit `ssh-keygen -R [IP/Host]`."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen Local Port Forwarding (-L) und Remote Port Forwarding (-R) in SSH?",
+    "answer": "Bei Local Port Forwarding (`-L [lokaler_port]:[ziel_host]:[ziel_port]`) wird ein Port des eigenen Rechners durch den SSH-Tunnel zu einem Port im Netzwerk des SSH-Servers geleitet. Bei Remote Port Forwarding (`-R [remote_port]:[ziel_host]:[ziel_port]`) wird ein Port des SSH-Servers zu einem Port im Netzwerk des Clients weitergeleitet."
+  },
+  {
+    "question": "Warum verweigert ein SSH-Server die Anmeldung per Public Key, wenn die Berechtigungen von ~/.ssh oder authorized_keys zu offen sind?",
+    "answer": "SSH verlangt strikte Berechtigungen, um unbefugtes Auslesen oder Manipulieren von Schlüsseln zu verhindern. Das Verzeichnis `~/.ssh` darf maximal die Berechtigung `700` (drwx------) besitzen, die Datei `authorized_keys` maximal `600` (rw-------). Sind die Rechte zu offen, ignoriert der SSH-Daemon die Schlüssel aus Sicherheitsgründen."
+  },
+  {
+    "question": "Wie sieht der Inhalt einer SSH-Client-Config (~/.ssh/config) aus, um eine passwortlose Anmeldung an 'srv01' auf Port 2222 als User 'admin' einzurichten?",
+    "answer": "```text\nHost srv01\n    HostName 192.168.1.100\n    User admin\n    Port 2222\n    IdentityFile ~/.ssh/id_ed25519\n``` Mit diesem Eintrag reicht im Terminal der einfache Aufruf von `ssh srv01` aus."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen DAS, NAS und SAN?",
+    "answer": "1. **DAS (Direct Attached Storage)**: Direkt an einen Server angeschlossener Speicher (z. B. interne Festplatten, USB). \n2. **NAS (Network Attached Storage)**: Speicher mit eigenem Dateisystem, der über ein IP-Netzwerk auf Dateiebene freigegeben wird (z. B. per NFS/SMB). \n3. **SAN (Storage Area Network)**: Hochgeschwindigkeits-Speichernetzwerk, das Speicher auf Blockebene (Block-I/O) über Fibre Channel oder iSCSI bereitstellt."
+  },
+  {
+    "question": "Wie funktioniert das iSCSI-Protokoll und was bedeuten Initiator und Target?",
+    "answer": "iSCSI transportiert SCSI-Blockbefehle über herkömmliche TCP/IP-Netzwerke (meist über Port 3260). Der **iSCSI-Initiator** ist der Client (z. B. ein Server), der den Speicher anfordert. Das **iSCSI-Target** ist der Server oder das Storage-System (z. B. ein NAS), welches die virtuellen Festplatten (LUNs) im Netz bereitstellt."
+  },
+  {
+    "question": "Was versteht man unter Speichervirtualisierung und was ist ein Speicherpool?",
+    "answer": "Speichervirtualisierung fasst mehrere physische Speichermedien (HDDs, SSDs) zu einer logischen Einheit zusammen. Ein **Speicherpool** ist dieser aggregierte logische Speicherplatz, aus dem dynamisch virtuelle Laufwerke (Volumes/LUNs) beliebiger Größe erstellt werden können, unabhängig von den physikalischen Plattengrenzen."
+  },
+  {
+    "question": "Was ist Datendeduplizierung auf Blockebene und worin liegt ihr Vorteil?",
+    "answer": "Datendeduplizierung ist ein Verfahren, bei dem redundante Datenblöcke auf einem Speichermedium identifiziert, nur einmal physisch gespeichert und durch Verweise ersetzt werden. Der Vorteil liegt in einer massiven Einsparung von Speicherplatz, insbesondere bei Virtualisierungsumgebungen mit vielen ähnlichen VM-Betriebssystemen."
+  },
+  {
+    "question": "NFS vs. SMB: Wann setzt man welches Netzwerkdateisystem primär ein?",
+    "answer": "**NFS (Network File System)** ist der Standard für Unix/Linux-Umgebungen und bietet dort sehr hohe Performance für das Mounten von Freigaben. **SMB (Server Message Block)** ist das Standardprotokoll in Windows-Netzwerken, wird jedoch über die Open-Source-Software Samba auch intensiv für plattformübergreifende Freigaben genutzt."
+  },
+  {
+    "question": "Vergleiche die RAID-Level 1, 5 und 10 hinsichtlich Ausfallsicherheit und Netto-Kapazität.",
+    "answer": "1. **RAID 1 (Spiegelung)**: Benötigt mind. 2 Platten. Netto-Kapazität 50 %. Sehr hohe Ausfallsicherheit (1 Platte darf ausfallen). \n2. **RAID 5 (Parität)**: Benötigt mind. 3 Platten. Netto-Kapazität (N-1) Platten. Verträgt den Ausfall von genau 1 Platte. \n3. **RAID 10 (Spiegelung + Striping)**: Benötigt mind. 4 Platten. Netto-Kapazität 50 %. Verträgt den Ausfall von bis zu 2 Platten (je nach Mirror-Gruppe)."
+  },
+  {
+    "question": "Welche drei logischen Ebenen nutzt der Logical Volume Manager (LVM) und was ist der Hauptvorteil von LVM?",
+    "answer": "LVM nutzt **PVs** (Physical Volumes, reale Platten/Partitionen), die zu einer **VG** (Volume Group, Speicherpool) gebündelt werden, aus der wiederum **LVs** (Logical Volumes, virtuelle Partitionen) geschnitten werden. Der Hauptvorteil: LVs lassen sich im laufenden Betrieb flexibel vergrößern und über mehrere physische Festplatten hinweg ausdehnen."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen Thick Provisioning und Thin Provisioning?",
+    "answer": "Bei **Thick Provisioning** wird der gesamte zugewiesene Speicherplatz sofort physikalisch auf der Festplatte reserviert (z. B. 100 GB belegen sofort 100 GB). Bei **Thin Provisioning** wird der Speicherplatz nur virtuell zugewiesen; er belegt physisch erst dann Speicherplatz auf dem Datenträger, wenn tatsächlich Daten hineingeschrieben werden."
+  },
+  {
+    "question": "Was misst die Kennzahl IOPS und warum ist sie bei der Speicherplanung für VMs essenziell?",
+    "answer": "IOPS steht für Input/Output Operations Per Second und misst die Anzahl der Lese- und Schreibvorgänge, die ein Speichersystem pro Sekunde bewältigen kann. Für VMs ist IOPS essenziell, da viele parallel laufende Betriebssysteme unzählige kleine Lese-/Schreibzugriffe erzeugen, die herkömmliche HDDs (mit niedrigen IOPS) schnell überlasten, während SSDs (hohe IOPS) dies problemlos verarbeiten."
+  },
+  {
+    "question": "Was ist Multipathing und welche Aufgaben hat es in SAN-Strukturen?",
+    "answer": "Multipathing ist ein Sicherheitsverfahren, bei dem ein Server über mehrere redundante physische Verbindungswege (HBA-Karten, Switche, Kabel) mit einem SAN-Speichersystem verbunden wird. Fällt ein Pfad aus, schaltet das System im laufenden Betrieb transparent auf den Alternativpfad um (Ausfallsicherheit) und kann im Normalbetrieb Daten über beide Pfade verteilen (Lastverteilung)."
+  },
+  {
+    "question": "Warum wird ein iSCSI-Target nach dem Booten eines Linux-Clients oft nicht automatisch eingehängt und wie korrigiert man das?",
+    "answer": "Wenn das System versucht, die iSCSI-LUN über die `/etc/fstab` zu mounten, bevor das Netzwerk betriebsbereit ist, schlägt der Bootvorgang fehl oder die Partition bleibt leer. Die Lösung ist das Hinzufügen der Mount-Option `_netdev` in der `/etc/fstab`, welche dem System befiehlt, das Einhängen so lange zu verzögern, bis das Netzwerk vollständig initialisiert wurde."
+  },
+  {
+    "question": "Welche Befehle sind nötig, um ein iSCSI-Target unter Linux zu suchen, anzubinden und dauerhaft zu mounten?",
+    "answer": "1. Suchen (Discovery): `iscsiadm -m discovery -t sendtargets -p [Target-IP]` \n2. Einloggen (Login): `iscsiadm -m node -T [Target-IQN] -p [Target-IP] --login` \n3. Das neu entstandene Blockgerät (z. B. `/dev/sdb`) formatieren: `mkfs.ext4 /dev/sdb1` \n4. Mounten und in `/etc/fstab` mit der Option `_netdev` eintragen."
+  },
+  {
+    "question": "Warum ersetzt eine RAID-Spiegelung (z. B. RAID 1) niemals ein echtes Daten-Backup?",
+    "answer": "Ein RAID erhöht lediglich die Ausfallsicherheit bei Hardwaredefekten im laufenden Betrieb. Wenn Daten versehentlich gelöscht, von Ransomware verschlüsselt oder durch Systemfehler korrumpiert werden, geschieht dies auf gespiegelten Platten zeitgleich in Echtzeit. Ein Backup hingegen speichert historische Datenstände isoliert und zeitlich versetzt außerhalb des Live-Systems."
+  },
+  {
+    "question": "Vergleiche Vollbackup, inkrementelles Backup und differenzielles Backup.",
+    "answer": "1. **Vollbackup**: Sichert alle Daten komplett. Dauert lang, braucht viel Speicher, Wiederherstellung ist sehr schnell. \n2. **Inkrementell**: Sichert nur Änderungen seit dem *letzten* inkrementellen Backup. Schnell, speichereffizient, aber für das Restore wird das Vollbackup und *alle* Zwischenschritte benötigt. \n3. **Differenziell**: Sichert alle Änderungen seit dem *letzten Vollbackup*. Benötigt für das Restore nur das Vollbackup und das letzte differenzielle Backup."
+  },
+  {
+    "question": "Erkläre die 3-2-1-Backup-Regel.",
+    "answer": "Die 3-2-1-Regel besagt: \n- **3**: Erstelle mindestens drei Kopien deiner Daten (1x Original, 2x Backups). \n- **2**: Verwende mindestens zwei unterschiedliche Medientypen für die Speicherung (z. B. interne SSD, NAS-System, LTO-Band). \n- **1**: Lagere mindestens eine Backup-Kopie an einem externen, geografisch getrennten Standort (z. B. Cloud-Speicher oder Bankschließfach)."
+  },
+  {
+    "question": "Was ist Desaster-Recovery und wie unterscheidet es sich von einem reinen Daten-Backup?",
+    "answer": "Daten-Backup bezeichnet das reine Sichern und Verwahren von rohen Daten. Desaster-Recovery (Notfall-Wiederherstellung) umfasst die gesamte Strategie, Prozesse und Infrastruktur, um nach einem katastrophalen Systemausfall (Brand, Cyberangriff, Hardware-Totalverlust) den gesamten IT-Betrieb und alle Dienste schnellstmöglich wieder in einen funktionsfähigen Zustand zu versetzen."
+  },
+  {
+    "question": "Definiere die Kennzahlen RPO (Recovery Point Objective) und RTO (Recovery Time Objective).",
+    "answer": "**RPO (Wiederherstellungspunkt)** definiert den maximal tolerierbaren Datenverlust im Zeitmaß (z. B. max. 4 Stunden Datenverlust bei Backup-Intervallen von 4 Stunden). **RTO (Wiederherstellungszeit)** beschreibt die maximal zulässige Zeitdauer, die der Wiederherstellungsprozess bis zur Wiederinbetriebnahme der Dienste in Anspruch nehmen darf."
+  },
+  {
+    "question": "Welche organisatorischen Maßnahmen fordert das BSI (Bundesamt für Sicherheit in der Informationstechnik) zur Katastrophenvorsorge?",
+    "answer": "Das BSI fordert u. a. die Erstellung eines detaillierten **Notfallhandbuchs** (mit klaren Rollen, Ablaufplänen und Kontaktketten), die **geografisch getrennte Aufbewahrung** von Backups (Schutz vor Brand/Diebstahl), die Definition von RPOs und RTOs sowie das **regelmäßige, dokumentierte Testen** von Notfall-Wiederherstellungen unter realistischen Bedingungen."
+  },
+  {
+    "question": "Nenne drei verbreitete Linux-Werkzeuge für automatisierte Backups und deren Fokus.",
+    "answer": "1. `rsync`: Ideal für die dateibasierte, inkrementelle Synchronisation. \n2. `tar`: Erstellt komprimierte Archivdateien (Tape-Archive) von Verzeichnissen. \n3. `BorgBackup` (oder `Restic`): Hochmoderne Tools, die Deduplizierung, Komprimierung und starke clientseitige Verschlüsselung nativ beherrschen."
+  },
+  {
+    "question": "Warum ist die Verschlüsselung von Backups wichtig und wie schützt man den Key?",
+    "answer": "Backups enthalten oft alle vertraulichen Unternehmensdaten im Klartext. Wer physischen Zugriff auf ein unverschlüsseltes Backup-Medium erlangt, umgeht sämtliche Live-Systembarrieren. Der Verschlüsselungsschlüssel (Key) muss völlig getrennt vom Backup-System und den Backup-Daten gesichert werden (z. B. in einem sicheren Passwortmanager oder Hardware-Sicherheitsmodul), da ein verlorener Key das Backup unbrauchbar macht."
+  },
+  {
+    "question": "Warum ist ein regelmäßiger Restore-Test unverzichtbar?",
+    "answer": "Ein Backup ist nur so viel wert wie seine erfolgreiche Wiederherstellung. Ohne regelmäßige Restore-Tests bleibt unbemerkt, ob Backup-Dateien korrupt sind, der Wiederherstellungsprozess aufgrund fehlender Lizenzen/Treiber blockiert, die RTO-Zeiten überschritten werden oder die Dokumentation des Notfallplans lückenhaft ist."
+  },
+  {
+    "question": "Was passiert, wenn man eine aktive SQL-Datenbank im laufenden Betrieb einfach per Dateikopie (cp oder rsync) sichert?",
+    "answer": "Die kopierten Datenbankdateien sind im Backup häufig korrupt (unbrauchbar). Da die Datenbank während des Kopiervorgangs Daten im RAM hält und parallel in Dateien schreibt, wird ein inkonsistenter Zustand auf Disk gesichert. Datenbanken müssen vorab mit speziellen Tools gesichert werden (z. B. `mysqldump`) oder über Dateisystem-Snapshots mit kurzzeitiger Schreibsperre (Locking)."
+  },
+  {
+    "question": "Wie sieht ein einfacher Bash-Einzeiler für einen Cronjob aus, der täglich ein Backup-Archiv erstellt und Dateien älter als 7 Tage löscht?",
+    "answer": "```bash\ntar -czf /backup/web_$(date +\\%F).tar.gz /var/www/ && find /backup/ -name \"web_*.tar.gz\" -mtime +7 -delete\n``` Dieser Befehl packt den Web-Ordner mit aktuellem Datumsstempel im Dateinamen und löscht im Anschluss alle entsprechenden Backups im Zielordner, deren Änderungsdatum länger als 7 Tage zurückliegt."
+  },
+  {
+    "question": "Was versteht man unter dem 'Großvater-Vater-Sohn'-Prinzip (Generationen-Prinzip) bei Backups?",
+    "answer": "Es ist eine klassische Rotationsstrategie für Backup-Medien: \n- **Sohn (Täglich)**: Werktägliche Backups, die nach einer Woche rotieren. \n- **Vater (Wöchentlich)**: Wöchentliche Backups (z. B. jeden Freitag), die nach einem Monat überschrieben werden. \n- **Großvater (Monatlich)**: Monatliche Backups, die für mindestens ein Jahr oder dauerhaft archiviert werden."
+  },
+  {
+    "question": "Was ist der fundamentale Unterschied zwischen einer VM und einem Docker-Container?",
+    "answer": "Eine VM virtualisiert die komplette Hardware und benötigt für jede Instanz ein vollständiges Gastbetriebssystem inklusive eigenem Kernel. Ein Docker-Container hingegen virtualisiert nur das Betriebssystem, teilt sich den Kernel des Host-Systems und isoliert die Prozesse auf Applikationsebene, was ihn extrem leichtgewichtig, ressourcensparend und schnell startend macht."
+  },
+  {
+    "question": "Welche beiden Linux-Kernel-Features machen die Isolation von Docker-Containern technisch erst möglich?",
+    "answer": "1. **Namespaces**: Isolieren die Sichtbarkeit von Systemressourcen (Prozesse, Netzwerk, Dateisysteme, Benutzer) für den Container. \n2. **Control Groups (cgroups)**: Begrenzen und überwachen die physische Ressourcennutzung (CPU, RAM, Festplatten-I/O) der isolierten Containerprozesse."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen einem Docker Image und einem Docker Container?",
+    "answer": "Ein **Docker Image** ist eine schreibgeschützte, statische Schablonen-Datei, die den gesamten Anwendungscode, Bibliotheken und Abhängigkeiten enthält (die Bauanleitung). Ein **Docker Container** ist die aktive, ausführbare Instanz dieses Images, die im Arbeitsspeicher läuft und um eine dünne, beschreibbare Dateisystemschicht ergänzt wurde."
+  },
+  {
+    "question": "Was ist ein Dockerfile und was bedeuten die Anweisungen FROM, RUN, COPY und CMD?",
+    "answer": "Ein Dockerfile ist ein Textdokument mit schrittweisen Instruktionen zum automatischen Bauen eines Docker-Images. \n- `FROM`: Definiert das Basis-Image (z. B. `ubuntu:latest`). \n- `RUN`: Führt Befehle während der Erstellung des Images aus (z. B. Softwareinstallation). \n- `COPY`: Kopiert lokale Dateien vom Host in das Image. \n- `CMD`: Definiert den Standardbefehl, der beim Starten des Containers ausgeführt wird."
+  },
+  {
+    "question": "Warum sind Container flüchtig (ephemeral) und wie lösen Volumes und Bind Mounts dieses Problem?",
+    "answer": "Schreibt ein Container Daten, lVM-Festplatte oder im Container-Dateisystem, werden diese beim Löschen des Containers unwiderruflich vernichtet. **Volumes** (von Docker verwalteter Speicherplatz auf dem Host) und **Bind Mounts** (direkte Verknühpfung eines beliebigen Host-Pfads im Container) lagern Daten außerhalb der Container-Schicht persistent und sicher aus."
+  },
+  {
+    "question": "Erkläre die Docker-Netzwerktypen Bridge, Host und None.",
+    "answer": "- **Bridge (Standard)**: Erstellt ein privates, internes virtuelles Netzwerk auf dem Host. Container können untereinander kommunizieren; der Zugriff von außen erfordert Port-Mapping. \n- **Host**: Deaktiviert die Netzisolierung; der Container nutzt direkt die Netzwerkschnittstellen und IP-Adresse des Hosts. \n- **None**: Der Container besitzt außer dem Loopback-Interface keinerlei Netzwerkanbindung."
+  },
+  {
+    "question": "Wie funktioniert das Port-Mapping bei Docker anhand des Beispiels '-p 8080:80'?",
+    "answer": "Das Port-Mapping leitet Netzwerkverkehr weiter. Der Parameter `-p 8080:80` nimmt Anfragen entgegen, die auf dem physischen Host-System auf Port `8080` eingehen, und leitet sie transparent an den internen Port `80` des isolierten Docker-Containers weiter."
+  },
+  {
+    "question": "Was ist Docker Compose, wie heißt das Dateiformat und welchen Nutzen bietet es?",
+    "answer": "Docker Compose ist ein Werkzeug zur Definition und zum Management von Multi-Container-Anwendungen. In einer zentralen Konfigurationsdatei im **YAML-Format** (`docker-compose.yml`) werden sämtliche Container, Netzwerke, Volumes und Abhängigkeiten definiert. Die gesamte Anwendung kann dann mit dem einfachen Befehl `docker-compose up -d` gestartet werden."
+  },
+  {
+    "question": "Was ist Portainer und wie erleichtert es die Arbeit mit Docker?",
+    "answer": "Portainer ist eine webbasierte, grafische Benutzeroberfläche zur komfortablen Verwaltung von Docker-Umgebungen. Es erlaubt das Starten, Stoppen, Überwachen und Konfigurieren von Containern, Images, Volumes und Netzwerken über den Webbrowser, ohne komplexe Terminalbefehle eingeben zu müssen."
+  },
+  {
+    "question": "Warum ist es ein massives Sicherheitsrisiko, Prozesse innerhalb eines Containers standardmäßig als Root auszuführen?",
+    "answer": "Da sich Container den Kernel des Host-Systems teilen, ist der Root-User im Container technisch identisch mit dem Root-User auf dem Host. Gelingt einem Angreifer der Ausbruch aus dem Container (Container Breakout), erlangt er augenblicklich vollen administrativen Zugriff auf das gesamte zugrundeliegende Host-System. Prozesse sollten im Container daher immer unter einem unprivilegierten Benutzer laufen."
+  },
+  {
+    "question": "Welcher fatale Fehler führt zum Datenverlust einer containerisierten Nextcloud beim Container-Update?",
+    "answer": "Wenn der Nextcloud-Container gelöscht und durch das neue Image ersetzt wird, gehen alle Daten und die SQLite-Datenbank verloren, falls kein persistentes Volume-Mapping für `/var/www/html/data` (Nextcloud-Dateien) und `/var/www/html/config` (Konfiguration) definiert war. Daten dürfen niemals dauerhaft innerhalb der beschreibbaren flüchtigen Containersicht gespeichert werden."
+  },
+  {
+    "question": "Wie sieht eine einfache 'docker-compose.yml' aus, die Portainer auf Port 9000 startet und persistenten Speicher nutzt?",
+    "answer": "```yaml\nversion: '3'\nservices:\n  portainer:\n    image: portainer/portainer-ce:latest\n    container_name: portainer\n    restart: always\n    ports:\n      - \"9000:9000\"\n    volumes:\n      - /var/run/docker.sock:/var/run/docker.sock\n      - portainer_data:/data\nvolumes:\n  portainer_data:\n```"
+  },
+  {
+    "question": "Wie läuft die Kommunikation zwischen einem Webbrowser und einem Webserver (z. B. Nginx) ab?",
+    "answer": "Der Browser (Client) baut eine TCP-Verbindung zum Server auf (meist Port 80 für HTTP oder 443 für HTTPS) und sendet einen HTTP-Request (z. B. `GET /index.html`). Der Webserver verarbeitet diese Anfrage, sucht die entsprechende Datei auf der Platte oder reicht sie an einen Applikations-Server weiter und antwortet mit einem HTTP-Response (inklusive Statuscode wie `200 OK` und den HTML-Daten)."
+  },
+  {
+    "question": "Was sind Virtual Hosts (vhosts) und wie ermöglichen sie das Hosting mehrerer Domains auf einer IP?",
+    "answer": "Virtual Hosts (bei Nginx: Server Blocks) erlauben es, unterschiedliche Websites unter verschiedenen Domainnamen auf ein und demselben physischen Server und einer einzigen IP-Adresse zu hosten. Der Webserver analysiert hierzu den `Host`-Header in der eingehenden HTTP-Anfrage des Browsers und leitet die Anfrage an das korrespondierende Dokumentenverzeichnis (Document Root) weiter."
+  },
+  {
+    "question": "Was unterscheidet HTTPS von HTTP und wie wird ein Webserver mit SSL/TLS verschlüsselt?",
+    "answer": "HTTP überträgt Daten im Klartext, während HTTPS die gesamte Kommunikation mittels SSL/TLS kryptografisch verschlüsselt (Port 443). Zur Aktivierung benötigt der Webserver ein SSL/TLS-Zertifikat (z. B. kostenlos von Let's Encrypt) und den passenden Private Key. Der Server lädt das Zertifikat beim TLS-Handshake, woraufhin Browser und Server symmetrische Sitzungsschlüssel aushandeln."
+  },
+  {
+    "question": "Was ist ein Forward Proxy und in welchem Szenario wird er eingesetzt?",
+    "answer": "Ein Forward Proxy sitzt im lokalen Netzwerk vor den Clients und leitet deren Anfragen stellvertretend ins öffentliche Internet weiter. Er wird in Unternehmen eingesetzt, um den Internetverkehr der Mitarbeiter zu filtern (Web-Filter), Bandbreite zu sparen (Caching) oder die IP-Adressen der internen Clients vor dem Internet zu verbergen."
+  },
+  {
+    "question": "Was ist ein Reverse Proxy und welche drei wesentlichen Aufgaben übernimmt er?",
+    "answer": "Ein Reverse Proxy sitzt vor einem oder mehreren Web-/Applikationsservern und nimmt die Anfragen aus dem Internet stellvertretend für sie entgegen. Seine Hauptaufgaben sind: 1. **Lastverteilung (Load Balancing)**: Verteilt Anfragen auf mehrere Backend-Server. 2. **SSL-Offloading**: Übernimmt die rechenintensive SSL-Verschlüsselung zentral. 3. **Sicherheit (IP-Maskierung)**: Verbirgt die reale Struktur und die IPs der Backend-Systeme vor Angreifern."
+  },
+  {
+    "question": "Was unterscheidet SNAT (Source NAT) von DNAT (Destination NAT/Portfreigabe)?",
+    "answer": "**SNAT (Source NAT)** ändert die Absender-IP eines ausgehenden Datenpakets (z. B. wenn private IP-Adressen aus dem LAN über die öffentliche IP des Routers ins Internet geleitet werden). **DNAT (Destination NAT)** bzw. eine Portfreigabe ändert die Ziel-IP eines eingehenden Pakets, um Datenverkehr aus dem Internet gezielt an ein bestimmtes Gerät (z. B. einen Webserver) im privaten LAN weiterzuleiten."
+  },
+  {
+    "question": "Wie funktioniert Dynamic DNS (DynDNS) und warum ist es für Home-Labs wichtig?",
+    "answer": "Da Internetprovider privaten Anschlüssen meist täglich eine neue öffentliche IP-Adresse zuweisen, wäre ein Server zu Hause von außen ständig unter einer anderen IP erreichbar. DynDNS löst dies: Ein Client auf dem Router oder Server meldet jede IP-Änderung automatisch an einen DynDNS-Dienst, der den DNS-Record einer festen Domain (z. B. `meinhome.dyndns.org`) sofort aktualisiert."
+  },
+  {
+    "question": "Was ist der Zweck des Parameters 'trusted_domains' in der Nextcloud-Konfiguration ('config.php')?",
+    "answer": "Aus Sicherheitsgründen (Schutz vor Host-Header-Injection-Angriffen) verweigert Nextcloud jeden Zugriff, wenn der Aufruf nicht über eine explizit in der `config.php` im Array `trusted_domains` eingetragene Domain oder IP-Adresse erfolgt. Wird Nextcloud hinter einem Reverse-Proxy mit einem FQDN betrieben, muss dieser FQDN dort zwingend eingetragen werden."
+  },
+  {
+    "question": "Wie analysiert man mit Wireshark den Datenverkehr und woran erkennt man unverschlüsseltes HTTP?",
+    "answer": "Wireshark fängt die Netzwerkpakete am Netzwerkinterface ab. Filtert man nach `http`, sieht man bei unverschlüsselten Verbindungen sämtliche Inhalte (HTML-Code, Texte, Passwörter) im Klartext im Paket-Detail-Bereich. Bei verschlüsseltem HTTPS hingegen sieht man nur TCP-Pakete auf Port 443, deren Payload als unlesbares Rauschen (Application Data) dargestellt wird."
+  },
+  {
+    "question": "Vergleiche die Aufgaben der E-Mail-Protokolle SMTP, IMAP und POP3.",
+    "answer": "- **SMTP (Simple Mail Transfer Protocol)**: Dient ausschließich dem *Senden* und Weiterleiten von E-Mails zwischen Client und Server oder zwischen Servern. \n- **IMAP (Internet Message Access Protocol)**: Erlaubt das *Abrufen* von Mails, wobei die Mails auf dem Server verbleiben, synchronisiert werden und Ordnerstrukturen erhalten bleiben. \n- **POP3 (Post Office Protocol)**: Lädt die E-Mails vom Server herunter auf den Client und löscht sie standardmäßig im Anschluss vom Server."
+  },
+  {
+    "question": "Was ist die häufigste Ursache für den HTTP-Fehler '502 Bad Gateway' bei einem Reverse-Proxy?",
+    "answer": "Der HTTP-Fehler 502 bedeutet, dass der Reverse-Proxy die Anfrage zwar entgegengenommen hat, aber den dahinterliegenden Backend-Server (z. B. PHP-FPM, ein Docker-Container oder der Webserver-Dienst) im lokalen Netzwerk nicht erreichen kann. Dies passiert häufig, wenn das Backend offline ist, auf einem anderen Port läuft oder eine Firewall die interne Kommunikation blockiert."
+  },
+  {
+    "question": "Welche Schritte sind nötig, um Nextcloud im Heimnetzwerk sicher unter 'cloud.meinnetz.de' erreichbar zu machen?",
+    "answer": "1. DynDNS auf dem Router einrichten, um die dynamische IP der Domain `cloud.meinnetz.de` zuzuweisen. \n2. Portweiterleitung (Port 80 & 443) im Router auf den internen Reverse-Proxy einrichten. \n3. Den Reverse-Proxy konfigurieren, ein SSL-Zertifikat für die Domain abrufen und Anfragen an den internen Nextcloud-Container weiterleiten. \n4. Die Domain in der Nextcloud-`config.php` unter `trusted_domains` eintragen."
+  }
+]
